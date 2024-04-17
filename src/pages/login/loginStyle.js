@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import checkImg from "../../asset/img/checkImg.svg";
+import ddmLogo from "../../asset/img/ddmLogo.svg";
 
 export const loginBackground = styled.div`
   display: flex;
@@ -10,14 +12,25 @@ export const loginBackground = styled.div`
 `;
 
 export const loginContainer = styled.div`
+  position: relative;
   width: 20rem;
   height: 28.75rem;
+`;
+
+export const logo = styled.div`
+  position: absolute;
+  width: 11.5625rem;
+  height: 3.125rem;
+  left: 50%;
+  background-image: url(${ddmLogo});
+  transform: translate(-50%, -50%);
 `;
 
 export const loginIdBox = styled.div`
   height: 4.6875rem;
   display: flex;
   flex-direction: column;
+  margin-top: 6.25rem;
 `;
 
 export const loginIdLabel = styled.label`
@@ -95,14 +108,12 @@ export const loginKeepCheckbox = styled.input`
   border: none;
   border-radius: 0.25rem;
   background-color: #d9d9d9;
+  vertical-align: middle;
+  margin-right: 0.3125rem;
+  cursor: pointer;
 
   &:checked {
-    border-color: transparent;
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
-    background-size: 100% 100%;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-color: limegreen;
+    background-image: url(${checkImg});
   }
 `;
 
@@ -118,4 +129,37 @@ export const loginButton = styled.button`
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
+`;
+
+//--로그인 모달----------------
+
+export const modalWrapper = styled.div`
+  position: absolute;
+  top: 24%;
+  left: 60%;
+`;
+
+export const modalDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16rem;
+  height: 1.875rem;
+  background-color: #8a8a8a;
+  border-radius: 1rem;
+`;
+
+export const loginMent = styled.p`
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #fff;
+`;
+
+export const loginMentClose = styled.p`
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #fff;
+  margin-left: 0.75rem;
+  cursor: pointer;
 `;
