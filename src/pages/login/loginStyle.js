@@ -92,7 +92,7 @@ export const loginPwInput = styled.input`
 
 /**/
 export const loginKeepCheckboxWrapper = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-left: 0.3125rem;
 `;
 
@@ -125,7 +125,7 @@ export const loginButton = styled.button`
   background-color: #565656;
   border: none;
   border-radius: 0.625rem;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;

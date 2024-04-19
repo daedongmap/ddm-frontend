@@ -29,7 +29,6 @@ function LoginPage() {
             <L.loginKeepCheckbox type="checkbox" />
             <L.loginKeepLabel>로그인 유지</L.loginKeepLabel>
           </L.loginKeepCheckboxWrapper>
-
           <L.loginButton>로그인</L.loginButton>
         </L.loginContainer>
       </L.loginBackground>
