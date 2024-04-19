@@ -1,5 +1,5 @@
 import React from "react";
-import * as M from "./loginStyle";
+import * as M from "./mainStyle";
 
 function MainPage() {
   return (
