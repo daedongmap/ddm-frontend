@@ -10,6 +10,7 @@ export const clubDiv = styled.div`
   border-radius: 0.25rem;
   margin-right: 2.5rem;
   margin-bottom: 2.5rem;
+  cursor: pointer;
 
   &:nth-child(5n) {
     margin-right: 0;

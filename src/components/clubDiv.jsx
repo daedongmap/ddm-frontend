@@ -1,5 +1,6 @@
 import React from "react";
 import * as C from "./clubDivStyle";
+import { useNavigate } from "react-router-dom";
 
 function ClubDiv({
   posterImg,
@@ -8,8 +9,14 @@ function ClubDiv({
   clubIntroduction,
   recruitmentStatus,
 }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/home/${encodeURIComponent(clubName)}`);
+  };
+
   return (
-    <C.clubDiv>
+    <C.clubDiv onClick={handleClick}>
       <C.clubPoster posterImg={posterImg} />
       <C.clubInformationContainer>
         <C.clubInformationDiv>
