@@ -37,7 +37,7 @@ export const clubPoster = styled.div`
 `;
 
 export const clubCategory = styled.div`
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: #8d8d8d;
 `;
 
@@ -47,7 +47,7 @@ export const clubName = styled.div`
 `;
 
 export const clubIntroduction = styled.div`
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: #8d8d8d;
 `;
 
