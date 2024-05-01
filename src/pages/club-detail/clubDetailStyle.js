@@ -51,10 +51,11 @@ export const clubApplyButton = styled.div`
   border-radius: 1rem;
   vertical-align: middle;
   background-color: #e7e7e7;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5rem;
   color: #000;
   margin-left: auto;
+  cursor: pointer;
 `;
 
 export const clubApplyImg = styled.img`
@@ -81,18 +82,23 @@ export const clubDetailPosterImg = styled.img`
   box-shadow: -0.1rem 0.1rem 1rem rgb(0, 0, 0, 0.1);
 `;
 
-//--동아리 모집 정보---------
-
-export const clubRecruitmentInformationDiv = styled.div`
-  margin-left: 3.125rem;
+export const clubNewAnnouncementDiv = styled.div`
+  width: 71.25rem;
+  height: 5rem;
+  background-color: #e7e7e7;
+  border-radius: 0.5rem;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 5rem;
+  margin-top: 2.5rem;
 `;
 
-export const clubCategoryDiv = styled.div`
-  display: flex;
+export const announcementIcon = styled.img`
+  vertical-align: sub;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: 2.5rem;
+  margin-right: 1rem;
 `;
 
-export const clubCategoryIcon = styled.img`
-  
-`;
-
-//------------------
