@@ -92,6 +92,7 @@ export const clubNewAnnouncementDiv = styled.div`
   font-weight: 500;
   line-height: 5rem;
   margin-top: 2.5rem;
+  cursor: pointer;
 `;
 
 export const announcementIcon = styled.img`
