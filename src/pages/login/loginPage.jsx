@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import * as L from "./loginStyle";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const closeModal = () => {
@@ -29,7 +31,9 @@ function LoginPage() {
             <L.loginKeepCheckbox type="checkbox" />
             <L.loginKeepLabel>로그인 유지</L.loginKeepLabel>
           </L.loginKeepCheckboxWrapper>
-          <L.loginButton>로그인</L.loginButton>
+          <L.loginButton onClick={() => navigate("/home")}>
+            로그인
+          </L.loginButton>
         </L.loginContainer>
       </L.loginBackground>
     </>

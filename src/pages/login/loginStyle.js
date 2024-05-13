@@ -48,7 +48,7 @@ export const loginIdInput = styled.input`
   border: none;
   border-radius: 0.625rem;
   box-shadow: 0.0625rem 0.25rem 0.625rem rgb(0, 0, 0, 0.25);
-  color: #8d8d8d;
+  color: #000;
   font-size: 0.9375rem;
   padding-inline-start: 0.9375rem;
   padding-inline-end: 0.9375rem;
@@ -80,7 +80,7 @@ export const loginPwInput = styled.input`
   border: none;
   border-radius: 0.625rem;
   box-shadow: 0.0625rem 0.25rem 0.625rem rgb(0, 0, 0, 0.25);
-  color: #8d8d8d;
+  color: #000;
   font-size: 0.9375rem;
   padding-inline-start: 0.9375rem;
   padding-inline-end: 0.9375rem;
