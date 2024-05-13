@@ -102,3 +102,71 @@ export const announcementIcon = styled.img`
   margin-right: 1rem;
 `;
 
+export const activityContainer = styled.div`
+  margin-top: 3.75rem;
+`;
+
+export const activityLabel = styled.label`
+  font-size: 1.5rem;
+  font-weight: bolder;
+`;
+
+export const activityDetail = styled.div`
+  margin-top: 0.5rem;
+`;
+
+export const activityDate = styled.div`
+  display: inline-block;
+`;
+
+export const activity = styled.div`
+  display: inline-block;
+  margin-left: 0.875rem;
+`;
+
+export const activityData = styled.img`
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 0.1875rem;
+`;
+
+export const memberContainer = styled.div`
+  margin-top: 3.75rem;
+`;
+
+export const memberLabel = styled.label`
+  font-size: 1.5rem;
+  font-weight: bolder;
+`;
+
+export const memberDiv = styled.div`
+  display: flex;
+  align-items: center;
+  width: 71.25rem;
+  height: 3.75rem;
+  background-color: #e7e7e7;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+`;
+
+export const number = styled.div`
+  margin-left: 1.875rem;
+  font-size: 1rem;
+`;
+
+export const name = styled.div`
+  margin-left: 0.3125rem;
+  margin-right: 0.1875rem;
+  font-size: 1rem;
+`;
+
+export const job = styled.div`
+  margin-left: 0.1875rem;
+  font-size: 1rem;
+`;
+
+export const github = styled.div`
+  margin-left: auto;
+  margin-right: 2.5rem;
+  font-size: 1rem;
+`;

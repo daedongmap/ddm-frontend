@@ -5,6 +5,8 @@ import applyImg from "../../asset/img/applyImg.svg";
 import announcementIcon from "../../asset/img/announcementIcon.svg";
 import { clublist } from "../../constant/clubList";
 import ClubRecruitInfoDiv from "./clubRecruitInfoDiv";
+import activityDataImg from "../../asset/img/activityDataImg.svg";
+import { memberList } from "../../constant/memberList";
 
 function ClubDetailPage() {
   const { clubName } = useParams();
@@ -42,23 +44,31 @@ function ClubDetailPage() {
             <C.announcementIcon src={announcementIcon} alt="공지사항" />
             새로운 공지사항이 등록되었습니다.
           </C.clubNewAnnouncementDiv>
-          <div>
-            <div>대표활동</div>
-            <div>
-              <div>날짜</div>
-              <div>활동</div>
-              <img src="" alt="" />
-            </div>
-          </div>
-          <div>
-            <div>팀원소개</div>
-            <div>
-              <div>반번호</div>
-              <div>이름</div>
-              <div>직무</div>
-              <div>깃허브</div>
-            </div>
-          </div>
+          <C.activityContainer>
+            <C.activityLabel>대표활동</C.activityLabel>
+            <C.activityDetail>
+              <C.activityDate>2024.03.04</C.activityDate>
+              <C.activity>동아리 개설</C.activity>
+              <C.activityData src={activityDataImg} alt="" />
+            </C.activityDetail>
+            <C.activityDetail>
+              <C.activityDate>2024.03.05</C.activityDate>
+              <C.activity>동아리 폭파</C.activity>
+              <C.activityData src={activityDataImg} alt="" />
+            </C.activityDetail>
+          </C.activityContainer>
+          <C.memberContainer>
+            <C.memberLabel>팀원소개</C.memberLabel>
+            {memberList.map((member) => (
+              <C.memberDiv>
+                <C.number>{member.number} </C.number>
+                <C.name>{member.name}</C.name>
+                <div>/</div>
+                <C.job>{member.job}</C.job>
+                <C.github>{member.github}</C.github>
+              </C.memberDiv>
+            ))}
+          </C.memberContainer>
         </C.clubDetailContainer>
       </C.clubDetailBackground>
     </>
