@@ -7,8 +7,10 @@ import { clublist } from "../../constant/clubList";
 import ClubRecruitInfoDiv from "./clubRecruitInfoDiv";
 import activityDataImg from "../../asset/img/activityDataImg.svg";
 import { memberList } from "../../constant/memberList";
+import { useNavigate } from "react-router-dom";
 
 function ClubDetailPage() {
+  const navigate = useNavigate();
   const { clubName } = useParams();
   const club = clublist.find((club) => club.clubName === clubName);
   const [applyLink, setApplyLink] = useState("");
@@ -40,7 +42,7 @@ function ClubDetailPage() {
             <C.clubDetailPosterImg src={club.posterImg} alt={club.clubName} />
             <ClubRecruitInfoDiv />
           </C.clubRecruitmentInformationContainer>
-          <C.clubNewAnnouncementDiv>
+          <C.clubNewAnnouncementDiv onClick={() => navigate("/공지사항")}>
             <C.announcementIcon src={announcementIcon} alt="공지사항" />
             새로운 공지사항이 등록되었습니다.
           </C.clubNewAnnouncementDiv>
