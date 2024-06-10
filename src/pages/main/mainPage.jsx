@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import * as M from "./mainStyle";
 import ClubDiv from "../../components/clubDiv";
 import { clublist } from "../../constant/clubList";
+import useClub from "../../hooks/auth/useClub";
 
 function MainPage() {
   const [selectedCategory, setSelectedCategory] = useState("전체");
+  const [clubList, setClubList] = useState([]);
+  const { getClubList } = useClub();
 
   const handleCheckboxChange = (category) => {
     setSelectedCategory(category);
   };
+
+  const fetchClubs = useCallback(async () => {
+    const data = await getClubList();
+    setClubList(data);
+  }, [getClubList]);
+
+  useEffect(() => {
+    fetchClubs();
+  }, []);
 
   return (
     <>
@@ -45,22 +57,27 @@ function MainPage() {
             </M.clubCategoryCheckboxContainer>
           </M.clubCategoryCheckboxWrapper>
           <M.clubContainer>
-            {clublist
+            {clubList
               .filter((club) => {
                 if (!selectedCategory || selectedCategory === "전체")
                   return true;
                 return club.clubCategory === selectedCategory;
               })
-              .map((club, index) => (
-                <ClubDiv
-                  key={index}
-                  posterImg={club.posterImg}
-                  clubCategory={club.clubCategory}
-                  clubName={club.clubName}
-                  clubIntroduction={club.clubIntroduction}
-                  recruitmentStatus={club.recruitmentStatus}
-                />
-              ))}
+              .map((club, index) => {
+                const posterImg = `${club.filePath}/${club.fileName}`;
+                //이미지 불러오는거 부터 해야함
+
+                return (
+                  <ClubDiv
+                    key={index}
+                    posterImg={posterImg}
+                    clubCategory={club.clubCategory}
+                    clubName={club.clubName}
+                    clubIntroduction={club.clubIntroduction}
+                    recruitmentStatus={club.recruitmentStatus}
+                  />
+                );
+              })}
           </M.clubContainer>
         </M.mainContainer>
       </M.mainBackground>
