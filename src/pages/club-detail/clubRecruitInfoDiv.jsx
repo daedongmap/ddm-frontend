@@ -11,7 +11,6 @@ import { clublist } from "../../constant/clubList";
 
 function ClubRecruitInfoDiv() {
   const { clubName } = useParams();
-  const clubInfo = clublist.find((club) => club.clubName === clubName);
 
   return (
     <>
@@ -58,14 +57,12 @@ function ClubRecruitInfoDiv() {
           </R.clubRecruitInfoDiv>
         </div>
         <R.myClubRecruitInfoDiv>
-          <R.myClubRecruitInfo>{clubInfo.clubCategory}</R.myClubRecruitInfo>
-          <R.myClubRecruitInfo>{clubInfo.recruitnumber}</R.myClubRecruitInfo>
-          <R.myClubRecruitInfo>{clubInfo.recruitField}</R.myClubRecruitInfo>
-          <R.myClubRecruitInfo>{clubInfo.supportTarget}</R.myClubRecruitInfo>
-          <R.myClubRecruitInfo>{clubInfo.recruitPeriod}</R.myClubRecruitInfo>
-          <R.myClubRecruitInfo>
-            {clubInfo.interviewSchedule}
-          </R.myClubRecruitInfo>
+          {/* <R.myClubRecruitInfo>{clubCategory}</R.myClubRecruitInfo>
+          <R.myClubRecruitInfo>{recruitnumber}</R.myClubRecruitInfo>
+          <R.myClubRecruitInfo>{recruitField}</R.myClubRecruitInfo>
+          <R.myClubRecruitInfo>{supportTarget}</R.myClubRecruitInfo>
+          <R.myClubRecruitInfo>{recruitPeriod}</R.myClubRecruitInfo>
+          <R.myClubRecruitInfo>{interviewSchedule}</R.myClubRecruitInfo> */}
         </R.myClubRecruitInfoDiv>
       </R.clubRecruitInfoContainer>
     </>
