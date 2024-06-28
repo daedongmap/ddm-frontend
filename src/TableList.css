@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+
+  
+}
+
+.club_title{
+  margin-left: 15%;
+  margin-top: 5%;
+  font-family: 'Pretendard-Regular';
+  margin-bottom: 0px;
+}
+.club_img {
+  /*
+  text-align: left;
+  padding-right:25px ;
+  padding-left: 20px;
+  padding-top: 10px;
+  /* Add more styles as needed */
+}
+
+
+
+.right_td{
+  text-align: right;
+  padding: 13px;
+  background-color: #E7E7E7;
+  display: table-cell;
+  height: 45px;
+  width: 250px;
+  padding-right: 50px;
+  border-radius: 0px 8px 8px 0px ;
+  font-family: 'Pretendard-Regular';
+
+} 
+
+.left_td{
+  text-align: center;
+  padding: 10px;
+  background-color: #E7E7E7;
+  display: table-cell;
+  height: 45px;
+  width: 10px;
+  border-radius: 8px 0px 0px 8px ;
+  font-family: 'Pretendard-Regular';
+
+}
+.center_td{
+  text-align: left;
+  padding: 10px;
+  background-color: #E7E7E7;
+  display: table-cell;
+  height: 60px;
+  width: 250px;
+  font-family: 'Pretendard-Regular';
+
+
+}
+
+.table-container{
+  border-collapse: separate;
+  border-spacing: 0px 20px;
+  display: table;
+  width: 70%;
+  margin: auto;
+}
+
+/*
+.table-container th, .table-container td {
+  padding: 13px;
+  text-align: left;
+  width: 250px;
+  margin-top: 20px;
+  display: inline-block;
+  height: 45px;
+  background-color: #E7E7E7;
+  font-family: 'Pretendard-Regular';
+  text-align: center;
+  vertical-align: middle;
+  padding: auto;
+}
+*/
+
+
+.item_user{
+  /*padding-right: 20px;*/
+}
+.table-container th {
+  background-color: #f2f2f2;
+}
+
+.table-container tr:nth-child(even) {
+  background-color: ;
+}
+
+.table-container tr:hover {
+  background-color: 
+}
