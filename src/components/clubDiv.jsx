@@ -12,7 +12,7 @@ function ClubDiv({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/home/${encodeURIComponent(clubName)}`);
+    navigate(`/home/${clubName}`);
   };
 
   return (

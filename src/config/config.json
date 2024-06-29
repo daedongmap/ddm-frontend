@@ -1,3 +1,5 @@
 {
-  "SERVER": "http://10.80.162.192:8080"
+  "SERVER": "http://10.80.162.214:8080",
+  "CLIENT_ID": "85c0651509344286a0169ca6457a0d89418fd61d0d7a4cf3b5686991dd625ebf",
+  "REDIRECT_URL": "http://localhost:3000/home"
 }

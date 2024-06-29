@@ -37,6 +37,12 @@ export const clublist = [
     clubName: "Assisi",
     clubIntroduction: "뭐하는 동아리일까?",
     recruitmentStatus: "모집중",
+    recruitnumber: "4",
+    recruitField: "안드 2명, iOS 2명",
+    supportTarget: "1학년 재학생",
+    recruitPeriod: "2024. 03. 04(월) ~ 2024. 03. 10(일)",
+    interviewSchedule: "추후 공지",
+    applyLink: "https://docs.google.com/forms/u/0/?tgif=d",
   },
   {
     posterImg: PalermoPosterImg,

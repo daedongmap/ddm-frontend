@@ -12,16 +12,16 @@ import { useNavigate } from "react-router-dom";
 function ClubDetailPage() {
   const navigate = useNavigate();
   const { clubName } = useParams();
-  const club = clublist.find((club) => club.clubName === clubName);
+  // const club = clublist.find((club) => club.clubName === clubName);
   const [applyLink, setApplyLink] = useState("");
 
-  useEffect(() => {
-    setApplyLink(club.applyLink);
-  }, [clubName]);
+  // useEffect(() => {
+  //   setApplyLink(club.applyLink);
+  // }, []);
 
-  const handleApplyClick = () => {
-    window.location.href = club.applyLink;
-  };
+  // const handleApplyClick = () => {
+  //   window.location.href = club.applyLink;
+  // };
 
   return (
     <>
@@ -29,17 +29,21 @@ function ClubDetailPage() {
         <C.temporarySidebar></C.temporarySidebar>
         <C.clubDetailContainer>
           <C.clubInfoDiv>
-            <C.clubName>{club.clubName}</C.clubName>
-            <C.clubApplyButton onClick={handleApplyClick}>
+            <C.clubName>{clubName}</C.clubName>
+            <C.clubApplyButton
+            // onClick={handleApplyClick}
+            >
               <C.clubApplyImg src={applyImg} alt="신청하기" />
               신청하기
             </C.clubApplyButton>
           </C.clubInfoDiv>
           <C.clubDetailIntroduction>
-            {club.clubIntroduction}
+            {/* {club.clubIntroduction} */}
           </C.clubDetailIntroduction>
           <C.clubRecruitmentInformationContainer>
-            <C.clubDetailPosterImg src={club.posterImg} alt={club.clubName} />
+            <C.clubDetailPosterImg
+            //  src={club.posterImg} alt={club.clubName}
+            />
             <ClubRecruitInfoDiv />
           </C.clubRecruitmentInformationContainer>
           <C.clubNewAnnouncementDiv onClick={() => navigate("/공지사항")}>
