@@ -2,13 +2,31 @@ import React, { useState } from "react";
 import * as L from "./loginStyle";
 import * as DAuth from "./dauthStyle";
 import config from "../../config/config.json";
+import { useNavigate } from "react-router-dom";
+import useLogin from "../../hooks/auth/useLogin";
+import tokenStore from "../../lib/token/token";
 
 function LoginPage() {
+  const navigate = useNavigate();
+  const { login, error } = useLogin();
   const [isModalOpen, setIsModalOpen] = useState(true);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const handleLogin = async () => {
+    const accessToken = await login(username, password); // DAuth를 통한 로그인 시도
+    if (accessToken) {
+      tokenStore.saveToken(accessToken);
+      navigate("/home");
+    } else {
+      console.error("로그인 실패:", error);
+    }
+  };
+
   return (
     <>
       <DAuth.loginBackground>
