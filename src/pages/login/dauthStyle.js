@@ -41,3 +41,4 @@ export const modalWrapper = styled.div`
   top: 45%;
   left: 52%;
 `;
+ 
