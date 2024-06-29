@@ -23,6 +23,10 @@ function ClubDetailPage() {
   //   window.location.href = club.applyLink;
   // };
 
+  const handleClick = () => {
+    navigate(`/notice/${clubName}`);
+  };
+
   return (
     <>
       <C.clubDetailBackground>
@@ -46,7 +50,7 @@ function ClubDetailPage() {
             />
             <ClubRecruitInfoDiv />
           </C.clubRecruitmentInformationContainer>
-          <C.clubNewAnnouncementDiv onClick={() => navigate("/공지사항")}>
+          <C.clubNewAnnouncementDiv onClick={handleClick}>
             <C.announcementIcon src={announcementIcon} alt="공지사항" />
             새로운 공지사항이 등록되었습니다.
           </C.clubNewAnnouncementDiv>
