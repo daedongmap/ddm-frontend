@@ -1,7 +1,7 @@
 import React from "react";
 import Router from "./Router";
-import TableList  from "./TableList";
+import NoticePage from "./pages/notice/noticePage";
 function App() {
-  return <TableList></TableList>;
+  return <NoticePage  ></NoticePage>;
 }
 export default App;
