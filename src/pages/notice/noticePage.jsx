@@ -13,6 +13,7 @@ function NoticePage() {
       <N.NoticeContainer>
         <N.ClubName>{clubName}</N.ClubName>
         <N.Title>동아리 공지사항</N.Title>
+
         <N.WriteListDiv>
           {noticelist.map((write) => (
             <N.WriteDiv>
@@ -25,6 +26,7 @@ function NoticePage() {
             </N.WriteDiv>
           ))}
         </N.WriteListDiv>
+        
         {/* <table className="table-container">
           <thead>
             <tr></tr>
