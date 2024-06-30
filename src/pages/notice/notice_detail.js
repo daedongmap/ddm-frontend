@@ -1,0 +1,59 @@
+import React from "react";
+import * as N from "./noticeStyle";
+import { useParams } from "react-router-dom";
+import { noticelist } from "../../constant/noticeList";
+import writeImg from "../../asset/img/writeImg.svg";
+
+function Notice_detail_Page() {
+  const { clubName } = useParams();
+
+  return (
+    <N.Notice_detail_Background>
+      <N.temporarySidebar />
+      <N.Notice_detail_Container>
+        <N.ClubName>{clubName}</N.ClubName>
+        <N.Title>동아리 PPT 공유합니다</N.Title>
+        <N.WriteListDiv>
+          {noticelist.map((write) => (
+            <N.WriteDiv>
+              <N.WriteIcon src={writeImg} alt="문서" />
+              <N.WriteTitle>{write.title}</N.WriteTitle>
+              <N.Right>
+                <N.WriteDate>{write.writingDate}</N.WriteDate>
+                <N.WriteUser>{write.user}</N.WriteUser>
+              </N.Right>
+            </N.WriteDiv>
+          ))}
+        </N.WriteListDiv>
+        {/* <table className="table-container">
+          <thead>
+            <tr></tr>
+          </thead>
+          <tbody>
+            {noticelist.map((item) => (
+              <tr key={item.id}>
+                <td className="left_td">
+                  <img
+                    className="club_img"
+                    src="/document.svg"
+                    alt="문서 이미지"
+                  />
+                </td>
+                <td className="center_td">
+                  <span> {item.name} </span>
+                </td>
+                <td className="right_td">
+                  <span className="item_user">
+                    {item.age} <br></br> {item.user}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table> */}
+      </N.Notice_detail_Container>
+    </N.Notice_detail_Background>
+  );
+}
+
+export default NoticePage;
