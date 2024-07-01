@@ -59,7 +59,7 @@ export const recruitmentStatusDiv = styled.div`
 `;
 
 export const recruitmentStatusButton = styled.div`
-  width: 2.625rem;
+  width: 3rem;
   height: 1.25rem;
   font-size: 0.625rem;
   text-align: center;

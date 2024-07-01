@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import * as C from "../club-detail/clubDetailStyle";
 import applyImg from "../../asset/img/applyImg.svg";
@@ -8,12 +8,25 @@ import ClubRecruitInfoDiv from "./clubRecruitInfoDiv";
 import activityDataImg from "../../asset/img/activityDataImg.svg";
 import { memberList } from "../../constant/memberList";
 import { useNavigate } from "react-router-dom";
+import useClub from "../../hooks/auth/useClub";
 
 function ClubDetailPage() {
   const navigate = useNavigate();
   const { clubName } = useParams();
+  const [clubList, setClubList] = useState([]);
   // const club = clublist.find((club) => club.clubName === clubName);
   const [applyLink, setApplyLink] = useState("");
+  const { getClubList } = useClub();
+
+  const fetchClubs = useCallback(async () => {
+    const data = await getClubList();
+    const selectedClub = data.find((c) => c.clubName === clubName);
+    setClubList(selectedClub);
+  }, []);
+
+  useEffect(() => {
+    fetchClubs();
+  }, [fetchClubs]);
 
   // useEffect(() => {
   //   setApplyLink(club.applyLink);
@@ -42,11 +55,12 @@ function ClubDetailPage() {
             </C.clubApplyButton>
           </C.clubInfoDiv>
           <C.clubDetailIntroduction>
-            {/* {club.clubIntroduction} */}
+            {clubList.introduction}
           </C.clubDetailIntroduction>
           <C.clubRecruitmentInformationContainer>
             <C.clubDetailPosterImg
-            //  src={club.posterImg} alt={club.clubName}
+              src={`data:image/png;base64,${clubList.file}`}
+              alt={clubList.clubName}
             />
             <ClubRecruitInfoDiv />
           </C.clubRecruitmentInformationContainer>

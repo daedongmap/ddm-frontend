@@ -2,10 +2,16 @@ import React from "react";
 import * as N from "./noticeStyle";
 import { useParams } from "react-router-dom";
 import { noticelist } from "../../constant/noticeList";
+import { useNavigate } from "react-router-dom";
 import writeImg from "../../asset/img/writeImg.svg";
 
 function NoticePage() {
+  const navigate = useNavigate();
   const { clubName } = useParams();
+
+  const handleClick = (id) => {
+    navigate(`/notice/${clubName}/${id}`);
+  };
 
   return (
     <N.NoticeBackground>
@@ -15,8 +21,8 @@ function NoticePage() {
         <N.Title>동아리 공지사항</N.Title>
 
         <N.WriteListDiv>
-          {noticelist.map((write) => (
-            <N.WriteDiv>
+          {noticelist.map((write, index) => (
+            <N.WriteDiv key={index} onClick={() => handleClick(write.id)}>
               <N.WriteIcon src={writeImg} alt="문서" />
               <N.WriteTitle>{write.title}</N.WriteTitle>
               <N.Right>
@@ -26,7 +32,7 @@ function NoticePage() {
             </N.WriteDiv>
           ))}
         </N.WriteListDiv>
-        
+
         {/* <table className="table-container">
           <thead>
             <tr></tr>

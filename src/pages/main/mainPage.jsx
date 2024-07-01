@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import * as M from "./mainStyle";
 import ClubDiv from "../../components/clubDiv";
-import { clublist } from "../../constant/clubList";
 import useClub from "../../hooks/auth/useClub";
 
 function MainPage() {
@@ -20,7 +19,14 @@ function MainPage() {
 
   useEffect(() => {
     fetchClubs();
-  }, []);
+  }, [fetchClubs]);
+
+  const getCategoryLabel = (creative, experience) => {
+    if (creative && experience) return "창체 | 자율";
+    if (creative) return "창체";
+    if (experience) return "자율";
+    return "";
+  };
 
   return (
     <>
@@ -59,22 +65,31 @@ function MainPage() {
           <M.clubContainer>
             {clubList
               .filter((club) => {
+                const categoryLabel = getCategoryLabel(
+                  club.creative,
+                  club.experience
+                );
                 if (!selectedCategory || selectedCategory === "전체")
                   return true;
-                return club.clubCategory === selectedCategory;
+                if (selectedCategory === "창체") return club.creative;
+                if (selectedCategory === "자율") return club.experience;
+                return false;
               })
               .map((club, index) => {
-                const posterImg = `${club.filePath}/${club.fileName}`;
-                //이미지 불러오는거 부터 해야함
+                const posterImg = `data:image/png;base64,${club.file}`;
+                const clubCategory = getCategoryLabel(
+                  club.creative,
+                  club.experience
+                );
 
                 return (
                   <ClubDiv
                     key={index}
                     posterImg={posterImg}
-                    clubCategory={club.clubCategory}
+                    clubCategory={clubCategory}
                     clubName={club.clubName}
-                    clubIntroduction={club.clubIntroduction}
-                    recruitmentStatus={club.recruitmentStatus}
+                    clubIntroduction={club.introduction}
+                    recruitmentStatus={club.recruiting ? "모집중" : "모집끝"}
                   />
                 );
               })}
