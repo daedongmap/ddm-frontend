@@ -7,6 +7,11 @@ export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+    position: fixed; /* 고정 위치 */
+  justify-content:flex-start;
+      margin-right:1570px ;
+
+
 `;
 
 export const Icon = styled.img`
