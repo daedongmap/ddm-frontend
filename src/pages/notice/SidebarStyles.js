@@ -9,8 +9,7 @@ export const SidebarContainer = styled.div`
   align-items: center;
     position: fixed; /* 고정 위치 */
   justify-content:flex-start;
-  	float: left;
-
+      margin-right:1570px ;
 
 
 `;

@@ -5,6 +5,9 @@ import * as S from "./noticeDetail";
 import { Margin } from "./SidebarStyles";
 import { GlobalStyle } from "./noticeDetail";  
 import Sidebar from "./sidebar"; 
+import { noticelist } from "../../constant/noticeList";
+import { useParams } from "react-router-dom";
+
 
 /*
 import noticeImage1 from "../../asset/img/notice1.png";
@@ -15,6 +18,13 @@ import noticeImage5 from "../../asset/img/notice5.png";
 import noticeImage6 from "../../asset/img/e6.png";
   */
 function NoticeDetail() {
+  const { noticeId } = useParams();
+  const notice = noticelist.find(n => n.id === parseInt(noticeId));
+
+  if (!notice) {
+    return <div>Notice not found</div>;
+  }
+
   return (
     <S.NoticeBackground>
       <GlobalStyle />
