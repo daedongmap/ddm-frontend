@@ -16,6 +16,7 @@ import noticeImage6 from "../../asset/img/e6.png";
   */
 function NoticeDetail() {
   const { noticeId } = useParams();
+  const { clubName } = useParams();
   const notice = noticelist.find((n) => n.id === parseInt(noticeId));
 
   if (!notice) {
@@ -38,9 +39,9 @@ function NoticeDetail() {
         <S.ClubName>동아리 홍보 PPT 공유합니다</S.ClubName>
         <S.Date>2024.03.04</S.Date>
         <S.Content>
-          안녕하세요. Dion 부장은 아니고 그냥 뒷방 늙다리입니다.
+          안녕하세요. 동아리 부장은 아니고 그냥 뒷방 늙다리입니다.
           <br />
-          다름이 아니라 DION 홍보 PPT 공유합니다. 감사합니다.
+          다름이 아니라 동아리 홍보 PPT 공유합니다. 감사합니다.
           <br />
           <br />
           글씨 늘리기 늘리기 늘리기 이렇게 쓸내용이 길진 않겠지만 아무튼

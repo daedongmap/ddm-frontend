@@ -133,6 +133,7 @@ export const activityData = styled.img`
 
 export const memberContainer = styled.div`
   margin-top: 3.75rem;
+  margin-bottom: 3.75rem;
 `;
 
 export const memberLabel = styled.label`

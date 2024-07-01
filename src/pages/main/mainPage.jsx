@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import * as M from "./mainStyle";
 import ClubDiv from "../../components/clubDiv";
 import useClub from "../../hooks/auth/useClub";
+import Sidebar from "../notice/sidebar";
 
 function MainPage() {
   const [selectedCategory, setSelectedCategory] = useState("전체");
@@ -31,7 +32,7 @@ function MainPage() {
   return (
     <>
       <M.mainBackground>
-        <M.temporarySidebar></M.temporarySidebar>
+        <Sidebar />
         <M.mainContainer>
           <M.mainTitle>동아리</M.mainTitle>
           <M.clubCategoryCheckboxWrapper>

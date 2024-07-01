@@ -9,6 +9,7 @@ import activityDataImg from "../../asset/img/activityDataImg.svg";
 import { memberList } from "../../constant/memberList";
 import { useNavigate } from "react-router-dom";
 import useClub from "../../hooks/auth/useClub";
+import Sidebar from "../notice/sidebar";
 
 function ClubDetailPage() {
   const navigate = useNavigate();
@@ -36,6 +37,10 @@ function ClubDetailPage() {
   //   window.location.href = club.applyLink;
   // };
 
+  const handleApplyClick = () => {
+    window.location.href = `https://docs.google.com/forms/u/0/?tgif=d`;
+  };
+
   const handleClick = () => {
     navigate(`/notice/${clubName}`);
   };
@@ -43,13 +48,11 @@ function ClubDetailPage() {
   return (
     <>
       <C.clubDetailBackground>
-        <C.temporarySidebar></C.temporarySidebar>
+        <Sidebar />
         <C.clubDetailContainer>
           <C.clubInfoDiv>
             <C.clubName>{clubName}</C.clubName>
-            <C.clubApplyButton
-            // onClick={handleApplyClick}
-            >
+            <C.clubApplyButton onClick={handleApplyClick}>
               <C.clubApplyImg src={applyImg} alt="신청하기" />
               신청하기
             </C.clubApplyButton>
@@ -75,11 +78,11 @@ function ClubDetailPage() {
               <C.activity>동아리 개설</C.activity>
               <C.activityData src={activityDataImg} alt="" />
             </C.activityDetail>
-            <C.activityDetail>
+            {/* <C.activityDetail>
               <C.activityDate>2024.03.05</C.activityDate>
               <C.activity>동아리 폭파</C.activity>
               <C.activityData src={activityDataImg} alt="" />
-            </C.activityDetail>
+            </C.activityDetail> */}
           </C.activityContainer>
           <C.memberContainer>
             <C.memberLabel>팀원소개</C.memberLabel>

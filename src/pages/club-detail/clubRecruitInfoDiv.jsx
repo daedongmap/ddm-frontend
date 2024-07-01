@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import * as R from "./clubRecruitInfoDivStyle";
 import { useParams } from "react-router-dom";
 import categoryIcon from "../../asset/img/club_recruitInfo_icon/categoryIcon.svg";
@@ -8,9 +8,22 @@ import supportTargetIcon from "../../asset/img/club_recruitInfo_icon/supportTarg
 import recruitPeriodIcon from "../../asset/img/club_recruitInfo_icon/recruitPeriodIcon.svg";
 import interviewScheduleIcon from "../../asset/img/club_recruitInfo_icon/interviewScheduleIcon.svg";
 import { clublist } from "../../constant/clubList";
+import useClubInfo from "../../hooks/auth/useClubInfo";
 
 function ClubRecruitInfoDiv() {
   const { clubName } = useParams();
+  // const [clubInfo, setClubInfo] = useState([]);
+  // const { getClubInfo } = useClubInfo();
+
+  // const fetchClubInfos = useCallback(async () => {
+  //   const data = await getClubInfo(clubName);
+  //   const selectedClub = data.find((c) => c.clubName === clubName);
+  //   setClubInfo(selectedClub);
+  // }, [clubName]);
+
+  // useEffect(() => {
+  //   fetchClubInfos();
+  // }, [fetchClubInfos]);
 
   return (
     <>
@@ -57,6 +70,12 @@ function ClubRecruitInfoDiv() {
           </R.clubRecruitInfoDiv>
         </div>
         <R.myClubRecruitInfoDiv>
+          <R.myClubRecruitInfo>창체</R.myClubRecruitInfo>
+          <R.myClubRecruitInfo>0</R.myClubRecruitInfo>
+          <R.myClubRecruitInfo></R.myClubRecruitInfo>
+          <R.myClubRecruitInfo></R.myClubRecruitInfo>
+          <R.myClubRecruitInfo></R.myClubRecruitInfo>
+          <R.myClubRecruitInfo></R.myClubRecruitInfo>
           {/* <R.myClubRecruitInfo>{clubCategory}</R.myClubRecruitInfo>
           <R.myClubRecruitInfo>{recruitnumber}</R.myClubRecruitInfo>
           <R.myClubRecruitInfo>{recruitField}</R.myClubRecruitInfo>
