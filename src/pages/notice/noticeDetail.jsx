@@ -3,18 +3,22 @@
 import React from "react";
 import * as S from "./noticeDetail";
 import { Margin } from "./SidebarStyles";
+import { GlobalStyle } from "./noticeDetail";  
+import Sidebar from "./sidebar"; 
+
 /*
 import noticeImage1 from "../../asset/img/notice1.png";
 import noticeImage2 from "../../asset/img/notice2.png";
 import noticeImage3 from "../../asset/img/notice3.png";
-import noticeImage4 from "../../asset/img/notice4.png";
+import noticeImage4 from "../../asset/img/nonotictice4.png";
 import noticeImage5 from "../../asset/img/notice5.png";
-import noticeImage6 from "../../asset/img/notice6.png";
+import noticeImage6 from "../../asset/img/e6.png";
   */
 function NoticeDetail() {
   return (
     <S.NoticeBackground>
-      <S.Sidebar>
+      <GlobalStyle />
+      <Sidebar />
         {/*
         <S.SidebarIcon src={noticeImage1} alt="Icon 1" />
         <S.SidebarIcon src={noticeImage2} alt="Icon 2" />
@@ -23,7 +27,6 @@ function NoticeDetail() {
         <S.SidebarIcon src={noticeImage5} alt="Icon 5" />
         <S.SidebarIcon src={noticeImage6} alt="Icon 6" />
         */}
-      </S.Sidebar>
       <S.NoticeContainer>
         <S.ClubName>동아리 홍보 PPT 공유합니다</S.ClubName>
         <S.Date>2024.03.04</S.Date>

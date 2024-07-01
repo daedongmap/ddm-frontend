@@ -3,17 +3,17 @@ import * as N from "./noticeStyle";
 import { useParams } from "react-router-dom";
 import { noticelist } from "../../constant/noticeList";
 import writeImg from "../../asset/img/writeImg.svg";
+import Sidebar from "./sidebar"; 
 
 function NoticePage() {
   const { clubName } = useParams();
 
   return (
     <N.NoticeBackground>
-      <N.temporarySidebar />
+      <Sidebar />
       <N.NoticeContainer>
         <N.ClubName>{clubName}</N.ClubName>
         <N.Title>동아리 공지사항</N.Title>
-
         <N.WriteListDiv>
           {noticelist.map((write) => (
             <N.WriteDiv>
@@ -26,7 +26,7 @@ function NoticePage() {
             </N.WriteDiv>
           ))}
         </N.WriteListDiv>
-        
+
         {/* <table className="table-container">
           <thead>
             <tr></tr>
